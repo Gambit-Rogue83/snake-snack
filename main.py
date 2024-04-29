@@ -39,14 +39,15 @@ while not crashed:
 
     #Detect wall
     if snake.head.xcor() > 285 or snake.head.xcor() < -298 or snake.head.ycor() > 300 or snake.head.ycor() < -285:
-        crashed = True
-        score.game_over()
+        score.reset()
+        snake.reset()
+
 
     #Detect tail
     for segment in snake.snake[1:]:
         if snake.head.distance(segment) < 10:
-            crashed = True
-            score.game_over()
+            score.reset()
+            snake.reset()
 
 
 
